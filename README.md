@@ -1,2 +1,2 @@
-# videoTube
+# VideoTube
 A YouTube clone
