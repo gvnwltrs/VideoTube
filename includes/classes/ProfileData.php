@@ -9,6 +9,10 @@ class ProfileData {
         $this->profileUserObj = new User($connection, $profileUsername);
     }
 
+    public function getProfileUserObj() {
+        return $this->profileUserObj;
+    }
+
     public function getProfileUsername() {
         return $this->profileUserObj->getUsername(); 
     }
@@ -24,7 +28,33 @@ class ProfileData {
     }
 
     public function getCoverPhoto() {
-        
+        return "assets/images/coverPhotos/default-cover-photo.jpg";
+    }
+
+    public function getProfileUserFullName() {
+        return $this->profileUserObj->getName(); 
+    }
+
+    public function getProfilePicture() {
+        return $this->profileUserObj->getProfilePicture();
+    }
+
+    public function getSubscriberCount() {
+        return $this->profileUserObj->getSubscriberCount();
+    }
+
+    public function getUserVideos() {
+        $username = $this->getProfileUsername();
+        $query = $this->connection->prepare("SELECT * FROM videos WHERE uploadedBy=:uploadedBy ORDER BY uploadDate DESC"); 
+        $query->bindParam(":uploadedBy", $username); 
+        $query->execute(); 
+
+        $videos = array(); 
+        while($row = $query->fetch(PDO::FETCH_ASSOC)) {
+            $videos[] = new Video($this->connection, $row, $this->profileUserObj->getUsername()); 
+        }
+
+        return $videos; 
     }
 
 }
