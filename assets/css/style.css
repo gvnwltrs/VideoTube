@@ -796,3 +796,62 @@ a:hover {
     border-radius: 2px; 
     cursor: pointer; 
 }
+
+.profileContainer .channelContent {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd; 
+    border-top: none;
+}
+
+.nav-item a {
+    color:rgba(17, 17, 17, 0.6);
+}
+
+.channelContent .section .values {
+    color: rgba(17, 17, 17, 0.6);
+    display: flex; 
+    flex-direction: column;
+}
+
+.formSection:not(:last-child) {
+    padding-bottom: 20px;
+    margin-bottom: 20px; 
+    border-bottom: 1px solid #dedede; 
+}
+
+.settingsContainer form {
+    width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editVideoContainer .topSection {
+    display: flex;
+}
+
+.topSection .videoPlayer {
+    max-height: 300px;
+    flex: 1; 
+}
+
+.editVideoContainer .topSection .thumbnailItemsContainer {
+    display: flex; 
+    flex-direction: column;
+    margin: 0 10px; 
+    width: 210px;
+}
+
+.editVideoContainer .topSection .thumbnailItemsContainer .thumbnailItem {
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+.editVideoContainer .topSection .thumbnailItemsContainer .thumbnailItem.selected {
+    border: 3px solid #828282;
+}
+
+.editVideoContainer .topSection .thumbnailItemsContainer .thumbnailItem img {
+    width: 100%; 
+    cursor: pointer; 
+}
